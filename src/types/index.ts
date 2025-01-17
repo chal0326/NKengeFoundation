@@ -70,6 +70,45 @@ export type Database = {
         }
         Relationships: []
       }
+      events: {
+        Row: {
+          created_at: string
+          date: string
+          description: string
+          id: string
+          image_url: string | null
+          location: string | null
+          published: boolean | null
+          title: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          description: string
+          id?: string
+          image_url?: string | null
+          location?: string | null
+          published?: boolean | null
+          title: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          location?: string | null
+          published?: boolean | null
+          title?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       posts: {
         Row: {
           content: string
@@ -255,17 +294,3 @@ export type CompositeTypes<
   : PublicCompositeTypeNameOrOptions extends keyof PublicSchema["CompositeTypes"]
     ? PublicSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
     : never
-
-export type Post = {
-  id: string;
-  title: string;
-  content: string;
-  image_url: string | null;
-  published: boolean;
-  user_id: string | null;
-  created_at: string | null;
-  updated_at: string | null;
-};
-
-export type PostInsert = Omit<Post, 'id' | 'created_at' | 'updated_at'>;
-export type PostUpdate = Partial<PostInsert>;

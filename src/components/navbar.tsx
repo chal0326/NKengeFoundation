@@ -14,6 +14,7 @@ export function Navbar() {
     { title: 'Programs', href: '/programs' },
     { title: 'Impact', href: '/impact' },
     { title: 'Board', href: '/board' },
+    { title: 'Login', href: '/login' },
     { title: 'Get Involved', href: '/get-involved' },
   ];
 

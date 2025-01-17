@@ -97,23 +97,23 @@ export function Board() {
         ) : (
           boardMembers.map((member) => (
             <Card key={member.id} className="flex flex-col">
-              <CardHeader className="text-center">
-                <Avatar className="w-24 h-24 mx-auto mb-4">
+            <CardHeader className="text-center">
+              <Avatar className="w-24 h-24 mx-auto mb-4">
                   {member.image_url ? (
                     <AvatarImage src={member.image_url} alt={member.name} />
-                  ) : (
-                    <AvatarFallback>
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </AvatarFallback>
-                  )}
-                </Avatar>
-                <CardTitle>{member.name}</CardTitle>
-                <p className="text-sm text-muted-foreground">{member.role}</p>
-              </CardHeader>
-              <CardContent>
-                <TruncatedBio bio={member.bio} />
-              </CardContent>
-            </Card>
+                ) : (
+                  <AvatarFallback>
+                    {member.name.split(' ').map(n => n[0]).join('')}
+                  </AvatarFallback>
+                )}
+              </Avatar>
+              <CardTitle>{member.name}</CardTitle>
+              <p className="text-sm text-muted-foreground">{member.role}</p>
+            </CardHeader>
+            <CardContent>
+              <TruncatedBio bio={member.bio} />
+            </CardContent>
+          </Card>
           ))
         )}
       </div>
