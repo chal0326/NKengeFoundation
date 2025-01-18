@@ -3,18 +3,20 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HamburgerMenuIcon, DiscIcon } from '@radix-ui/react-icons';
+import { useAuth } from '@/lib/auth';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { user } = useAuth();
 
   const navItems = [
     { title: 'About', href: '/about' },
     { title: 'Blog', href: '/Blog' },
+    { title: 'Events', href: '/Events'},
     { title: 'Programs', href: '/programs' },
     { title: 'Impact', href: '/impact' },
     { title: 'Board', href: '/board' },
-    { title: 'Login', href: '/login' },
     { title: 'Get Involved', href: '/get-involved' },
   ];
 
@@ -41,6 +43,15 @@ export function Navbar() {
               {item.title}
             </Link>
           ))}
+          {user ? (
+            <Link to="/admin/dashboard" className="text-sm font-medium transition-colors hover:text-primary">
+              Admin Dashboard
+            </Link>
+          ) : (
+            <Link to="/login" className="text-sm font-medium transition-colors hover:text-primary">
+              Login
+            </Link>
+          )}
           <Button asChild>
             <Link to="/get-involved">Donate Now</Link>
           </Button>
@@ -71,6 +82,15 @@ export function Navbar() {
                   {item.title}
                 </Link>
               ))}
+              {user ? (
+                <Link to="/admin/dashboard" className="text-lg font-medium transition-colors hover:text-primary" onClick={() => setIsOpen(false)}>
+                  Admin Dashboard
+                </Link>
+              ) : (
+                <Link to="/login" className="text-lg font-medium transition-colors hover:text-primary" onClick={() => setIsOpen(false)}>
+                  Login
+                </Link>
+              )}
               <Button asChild className="mt-4">
                 <Link to="/get-involved" onClick={() => setIsOpen(false)}>
                   Donate Now

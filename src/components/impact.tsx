@@ -36,9 +36,7 @@ export function Impact() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
           <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Through the dedication of our team and the support of our donors, 
-            we've made significant strides in creating positive change.
-          </p>
+          The N'Kenge Foundation has made a meaningful impact through its initiatives that amplify untold stories and uplift communities. With productions like "Dorothy Dandridge! The Musical," they bring inspiring narratives to both stage and screen. Their educational programs offer workshops, mentorship, and internships to cultivate the next generation of artists. In partnership with Healing Tree, they implement community-focused mental health programs that use the arts as a tool for therapy and empowerment, while expanding their reach across various media to ensure these important stories are shared with diverse audiences.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

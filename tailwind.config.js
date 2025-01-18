@@ -17,6 +17,50 @@ export default {
         '2xl': '1400px',
       },
     },
+    colors: {
+      colors: {
+        background: 'hsl(0, 0%, 98%)',
+        foreground: 'hsl(0, 0%, 15%)',
+        card: {
+          DEFAULT: 'hsl(0, 0%, 98%)',
+          foreground: 'hsl(0, 0%, 15%)',
+        },
+        popover: {
+          DEFAULT: 'hsl(0, 0%, 98%)',
+          foreground: 'hsl(0, 0%, 15%)',
+        },
+        primary: {
+          DEFAULT: 'hsl(210, 40%, 35%)',
+          foreground: 'hsl(0, 0%, 100%)', // Adjusted for contrast
+        },
+        secondary: {
+          DEFAULT: 'hsl(35, 80%, 50%)',
+          foreground: 'hsl(0, 0%, 15%)',
+        },
+        muted: {
+          DEFAULT: 'hsl(0, 0%, 94%)',
+          foreground: 'hsl(0, 0%, 60%)',
+        },
+        accent: {
+          DEFAULT: 'hsl(150, 50%, 45%)',
+          foreground: 'hsl(0, 0%, 100%)', // Adjusted for contrast
+        },
+        destructive: {
+          DEFAULT: 'hsl(0, 84%, 60%)', // Example red
+          foreground: 'hsl(0, 0%, 100%)',
+        },
+        border: 'hsl(0, 0%, 80%)',
+        input: 'hsl(0, 0%, 90%)',
+        ring: 'hsl(210, 40%, 35%)', // Matching primary
+        chart: {
+          1: 'hsl(var(--chart-1))',
+          2: 'hsl(var(--chart-2))',
+          3: 'hsl(var(--chart-3))',
+          4: 'hsl(var(--chart-4))',
+          5: 'hsl(var(--chart-5))',
+        },
+      },
+    },
     extend: {
       colors: {
         border: 'hsl(var(--border))',

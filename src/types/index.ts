@@ -294,3 +294,13 @@ export type CompositeTypes<
   : PublicCompositeTypeNameOrOptions extends keyof PublicSchema["CompositeTypes"]
     ? PublicSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
     : never
+
+export interface Event {
+  id?: string; // Optional for new events
+  title: string;
+  description: string;
+  date: string;
+  location?: string | null;
+  image_url?: string | null;
+  published?: boolean;
+}
