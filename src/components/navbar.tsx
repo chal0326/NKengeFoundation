@@ -3,12 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { HamburgerMenuIcon, DiscIcon } from '@radix-ui/react-icons';
-import { useAuth } from '@/lib/auth';
+import { useAuth } from './AuthProvider';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { user } = useAuth();
+  const { user, login, logout } = useAuth();
 
   const navItems = [
     { title: 'About', href: '/about' },
@@ -44,14 +44,10 @@ export function Navbar() {
             </Link>
           ))}
           {user ? (
-            <Link to="/admin/dashboard" className="text-sm font-medium transition-colors hover:text-primary">
-              Admin Dashboard
-            </Link>
-          ) : (
-            <Link to="/login" className="text-sm font-medium transition-colors hover:text-primary">
-              Login
-            </Link>
-          )}
+        <Button onClick={logout}>Logout</Button>
+      ) : (
+        <Button onClick={() => login({ name: 'User' })}>Login</Button>
+      )}
           <Button asChild>
             <Link to="/get-involved">Donate Now</Link>
           </Button>
@@ -82,15 +78,12 @@ export function Navbar() {
                   {item.title}
                 </Link>
               ))}
-              {user ? (
-                <Link to="/admin/dashboard" className="text-lg font-medium transition-colors hover:text-primary" onClick={() => setIsOpen(false)}>
-                  Admin Dashboard
-                </Link>
-              ) : (
-                <Link to="/login" className="text-lg font-medium transition-colors hover:text-primary" onClick={() => setIsOpen(false)}>
-                  Login
-                </Link>
-              )}
+              {user ? 
+             (
+              <button onClick={logout}>Logout</button>
+            ) : (
+              <button onClick={() => login({ name: 'User' })}>Login</button>
+            )}
               <Button asChild className="mt-4">
                 <Link to="/get-involved" onClick={() => setIsOpen(false)}>
                   Donate Now
