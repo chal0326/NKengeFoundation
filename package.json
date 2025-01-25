@@ -63,6 +63,11 @@
     "tailwindcss": ">=3.0.0 || insiders",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.0.0",
+  "react-helmet-async": "^1.3.0",        // SEO management
+  "@stripe/stripe-js": "^6.3.0",         // Donation payments
+  "react-intl": "^6.6.4",                // Internationalization (i18n)
+  "@splidejs/react-splide": "^4.1.4",    // Image carousels for impact stories
+  "react-simple-maps": "^3.0.0",        // Interactive maps (for showing locations)
     "zod": "^3.23.8"
   },
   "devDependencies": {
